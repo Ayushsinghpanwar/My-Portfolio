@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./Images/background.jpeg");
+    height: 100vh;
+    width: 100vw;
+    color: white;
+}
+
+.navbaar {
+    /* position: fixed; Fixed position for the navbar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensures navbar stays above other elements */
+    border: 1px solid rgb(0, 213, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Add a slight background for visibility */
+    flex-wrap: wrap;
+}
+
+.left {
+    margin-left: 3rem;
+    padding: 5px;
+    height: 10vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: rgb(0, 208, 255);
+}
+
+/* Hamburger Menu */
+.hamburger {
+cursor: pointer;
+display: flex;
+flex-direction: column;
+gap: 4px;
+z-index: 200;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: black;;
+    border-radius: 3px;
+}
+
+/* Navbar Links */
+.right {
+    display: flex;
+    align-items: center;
+    font-size: 80%;
+    margin-right: 10px;
+}
+
+.icon {
+    background-color: black;
+    height: 5vh;
+    width: 5vh;
+    margin-top: 6px;
+}
+
+.right h2 {
+    font-size: 1.5rem;
+    margin-top: 8px;
+    padding: 3px;
+    color: blue;
+}
+
+.home, .about, .Projects, .Resume, .Contactme, .github {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .right h2 {
+        font-size: 1.2rem; /* Gradually reduce font size */
+    }
+
+    .icon {
+        height: 4vh;
+        width: 4vh; /* Slightly smaller icons */
+    }
+}
+
+@media (max-width: 700px) {
+    .hamburger {
+        display: block; /* Show hamburger menu on smaller screens */
+    }
+
+    .hamburger span {
+        background-color: rgb(0, 191, 255);
+    }
+    .right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: black;
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid rgb(0, 221, 255);
+        gap: 1rem;
+    }
+
+    /* Show navbar links on hover of the hamburger menu */
+    .hamburger:hover + .right {
+        display: flex;
+    }
+
+    .icon {
+        height: 4vh; /* Smaller icons for mobile */
+        width: 4vh;
+    }
+
+    .right h2 {
+        font-size: 1rem; /* Decrease font size further */
+    }
+    h1 {
+        font-size: 2rem; /* Slightly smaller portfolio text */
+    }
+}
+
+
+/* 
+/* About Me Section */
+@media (max-width: 700px) {
+    .aboutme {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        width: 100vw;
+        height: auto;
+    }
+
+    .leftside {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .leftside h2 {
+        font-size: 1.8rem;
+    }
+
+    .leftside p {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .leftside ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .leftside li {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .righside img {
+        width: 250px;
+        height: 250px;
+        margin-top: 2rem;
+    }
+}
+
+/* Projects Section */
+@media (max-width: 700px) {
+    .Myprojects {
+        flex-direction: column;
+        margin: 10vh 5vw;
+        width: 90vw;
+    }
+
+    .projectheading {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .projectswork {
+        width: 80vw;
+        margin-top: 3rem;
+    }
+
+    .projectswork img {
+        width: 100%;
+        height: auto;
+    }
+
+    .projectswork h2 {
+        font-size: 1.4rem;
+        margin-left: 0;
+    }
+
+    .projectswork p {
+        font-size: 1rem;
+    }
+
+    .projectbutton {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .projectbutton div {
+        width: 80%;
+        font-size: 1rem;
+    }
+}
+
+ */
+
+ .about {
+    opacity: 0; /* Hidden initially */
+    transform: translateY(20px); /* Slightly offset downward */
+    animation: fadeIn 1.5s ease-out forwards; /* Trigger animation on load */
+  }
+  
+  /* Keyframes for fade-in effect */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Move to original position */
+    }
+  }
+  
+
+  .projects_fade_in {
+    opacity: 0; /* Initial state is hidden */
+    transform: translateX(-30px); /* Initial offset */
+    animation: transitionIn 1.5s ease-out forwards; /* Apply animation */
+  }
+  
+  @keyframes transitionIn {
+    from {
+      opacity: 0;
+      transform: translateX(-30px); /* Start slightly to the left */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* End at original position */
+    }
+  }
+  
